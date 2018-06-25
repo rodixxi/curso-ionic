@@ -1,0 +1,23 @@
+movie-info {
+  ion-card-title {
+    font-style: italic;
+    .movie-title {
+      font-weight: bold;
+    }
+    .movie-score {
+      font-weight: lighter;
+    }
+  }
+  ion-card-content {
+    background-color: floralwhite;
+    text-align: justify;
+    .movie-rating {
+      font-weight: bold;
+      font-size: 1.2em;
+      margin-left: 1.2rem;
+      &:after {
+        content: ' --';
+      }
+    }
+  }
+}

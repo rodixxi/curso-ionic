@@ -1,0 +1,13 @@
+<ion-card>
+  <img [src]="movie.posterUrl"/>
+  <ion-card-content>
+    <ion-card-title>
+      <span class="movie-title">{{movie.title}}</span>
+      <span class="movie-score">({{movie.score}}/{{maxScore}})</span>
+    </ion-card-title>
+    <p>
+      <span class="movie-rating" [ngClass]="{'not-available-now': !(movie.availableNow)}">{{movie.rating}}</span>
+      {{movie.sinopsis}}
+    </p>
+  </ion-card-content>
+</ion-card>

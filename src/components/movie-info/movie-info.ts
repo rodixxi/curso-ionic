@@ -13,4 +13,12 @@ export class MovieInfoComponent {
 
   constructor() {}
 
+  likeMovie() {
+    console.log(`Te gustó ${this.movie.title} 👍🏻`);
+  }
+
+  dislikeMovie() {
+    console.log(`Que lástima que no te gustó ${this.movie.title} 😢`);
+  }
+
 }

@@ -5,5 +5,6 @@
 </ion-header>
 
 <ion-content padding>
-  <movie-info [movie]="montyPython"></movie-info>
+  <movie-info [movie]="montyPython" (movieAction)="action($event, montyPython)"></movie-info>
+  <movie-info [movie]="blackPanther" (movieAction)="action($event, blackPanther)"></movie-info>
 </ion-content>

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 //@ Models
 import { MovieModel, MAX_MOVIE_SCORE } from "../../models/movie.model";
 
@@ -10,15 +10,16 @@ export class MovieInfoComponent {
   maxScore = MAX_MOVIE_SCORE;
 
   @Input() movie: MovieModel;
+  @Output() movieAction: EventEmitter<string> = new EventEmitter<string>();;
 
   constructor() {}
 
   likeMovie() {
-    console.log(`Te gustó ${this.movie.title} 👍🏻`);
+    this.movieAction.emit('like');
   }
 
   dislikeMovie() {
-    console.log(`Que lástima que no te gustó ${this.movie.title} 😢`);
+    this.movieAction.emit('dislike');
   }
 
 }

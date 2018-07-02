@@ -25,15 +25,21 @@ export class MovieModel {
   private _score: number;
   private _rating: Ratings;
 
+  userLiked;
+
 
   private ratingsName = [];
 
-  constructor(data: {title: string, genre: string, phrase: Phrase, rating: Ratings}){
+  constructor(data: {title: string, genre: string, phrase: Phrase, rating: Ratings,
+                    sinopsis?: string, availableNow?: boolean, score?: number, posterUrl?: string}){
     this.title = data.title;
     this.genre = data.genre;
     this.phrase = data.phrase;
     this._rating = data.rating;
-    this.availableNow = false;
+    this.availableNow = !!data.availableNow;
+    this.sinopsis = data.sinopsis || '';
+    this.score = data.score || 0;
+    this.posterUrl = data.posterUrl || '';
     this.setRatings();
   }
 

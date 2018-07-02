@@ -5,9 +5,5 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-list>
-    <ion-list-header>Peliculas que viste</ion-list-header>
-    <ion-item *ngFor="let m of moviesSeen">{{m.title}} - {{m.userLiked? 'Te gustó': 'No te gustó'}}</ion-item>
-  </ion-list>
   <movie-info *ngFor="let m of movies" [movie]="m" (movieAction)="action($event, m)"></movie-info>
 </ion-content>

@@ -65,7 +65,7 @@ export class MovieModel {
   }
 
   set score(value: number) {
-    if(value > 0 && value <= MAX_MOVIE_SCORE) {
+    if(value >= 0 && value <= MAX_MOVIE_SCORE) {
       this._score = value;
     } else {
       console.error(`La película no puede tener un valor ${value}, debe estar entre 0 y ${MAX_MOVIE_SCORE}`);

@@ -8,7 +8,6 @@ import { MovieModel, Ratings } from "../../models/movie.model";
 })
 export class HomePage {
   movies: MovieModel[];
-  moviesSeen: MovieModel[];
 
   constructor() {
 
@@ -16,8 +15,6 @@ export class HomePage {
 
   ngOnInit() {
     this.movies = [];
-
-    this.moviesSeen = [];
 
     const montyPython = new MovieModel({
       title: 'Monty Python and the Holy Grail',
@@ -69,17 +66,17 @@ export class HomePage {
   }
 
   action(actionName: string, movie: MovieModel) {
-    const hasAlreadySeenIt = this.moviesSeen.findIndex(m => m.title === movie.title)
+//    const hasAlreadySeenIt = this.moviesSeen.findIndex(m => m.title === movie.title)
     switch (actionName) {
       case 'like':
         console.log(`Te gustó ${movie.title} 👍🏻`);
         movie.userLiked = true;
-        if(hasAlreadySeenIt < 0) this.moviesSeen.push(movie);
+//        if(hasAlreadySeenIt < 0) this.moviesSeen.push(movie);
         break;
       case 'dislike':
         console.log(`Que lástima que no te gustó ${movie.title} 😢`);
         movie.userLiked = false;
-        if(hasAlreadySeenIt < 0) this.moviesSeen.push(movie);
+//        if(hasAlreadySeenIt < 0) this.moviesSeen.push(movie);
         break;
       default:
         console.error('Acción incorrecta!');

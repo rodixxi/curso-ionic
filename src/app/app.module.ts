@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from "../components/components.module";
 import { MyFavoritesPageModule } from "../pages/my-favorites/my-favorites.module";
+import { MoviesProvider } from '../providers/movies/movies';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MyFavoritesPageModule } from "../pages/my-favorites/my-favorites.module
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    MoviesProvider
   ]
 })
 export class AppModule {}

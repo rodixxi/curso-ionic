@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 //@ Models
 import { MovieModel } from "../../models/movie.model";
 import { MoviesProvider } from "../../providers/movies/movies";
+import { NavParams } from "ionic-angular";
 
 @Component({
   selector: 'page-home',
@@ -9,11 +10,13 @@ import { MoviesProvider } from "../../providers/movies/movies";
 })
 export class HomePage {
   movies: MovieModel[];
+  user: string;
 
-  constructor(private moviePrv: MoviesProvider) {}
+  constructor(private moviePrv: MoviesProvider, private navParams: NavParams) {}
 
   ngOnInit() {
     this.movies = this.moviePrv.getMovies();
+    this.user = this.navParams.data.user;
   }
 
   action(actionName: string, movie: MovieModel) {

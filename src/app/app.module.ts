@@ -12,6 +12,7 @@ import { ComponentsModule } from "../components/components.module";
 import { MyFavoritesPageModule } from "../pages/my-favorites/my-favorites.module";
 import { MoviesProvider } from '../providers/movies/movies';
 import { LoginPageModule } from "../pages/login/login.module";
+import { MovieDetailPageModule } from "../pages/movie-detail/movie-detail.module";
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { LoginPageModule } from "../pages/login/login.module";
     IonicModule.forRoot(MyApp),
     ComponentsModule,
     MyFavoritesPageModule,
-    LoginPageModule
+    LoginPageModule,
+    MovieDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

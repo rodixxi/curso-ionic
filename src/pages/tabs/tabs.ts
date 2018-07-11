@@ -14,7 +14,10 @@ export class TabsPage {
 
   user: any;
 
-  constructor(params: NavParams) {
-    this.user = {user: params.data.user};
+  constructor(public params: NavParams) {
+  }
+
+  ngOnInit() {
+    this.user = {user: this.params.data.user};
   }
 }

@@ -5,5 +5,15 @@
 </ion-header>
 
 <ion-content padding>
-  <movie-info *ngFor="let m of movies" [movie]="m" (movieAction)="action($event, m)"></movie-info>
+  <ion-list>
+    <ion-item *ngFor="let m of movies" tappable (click)="openMovieDetail(m)">
+      <div class="img-container">
+        <img [src]="m.posterUrl">
+      </div>
+      <div class="info-container">
+        <h1>{{m.title}}</h1>
+        <h4>{{m.genre}}</h4>
+      </div>
+    </ion-item>
+  </ion-list>
 </ion-content>

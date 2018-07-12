@@ -11,6 +11,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { ComponentsModule } from "../components/components.module";
 import { MyFavoritesPageModule } from "../pages/my-favorites/my-favorites.module";
 import { MoviesProvider } from '../providers/movies/movies';
+import { LoginPageModule } from "../pages/login/login.module";
+import { MovieDetailPageModule } from "../pages/movie-detail/movie-detail.module";
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { MoviesProvider } from '../providers/movies/movies';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     ComponentsModule,
-    MyFavoritesPageModule
+    MyFavoritesPageModule,
+    LoginPageModule,
+    MovieDetailPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
